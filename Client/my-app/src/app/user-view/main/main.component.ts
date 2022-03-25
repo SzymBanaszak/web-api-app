@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DefaultService } from 'src/app/services/default.service';
+import { DefaultService } from '../../services/default.service';
 
 @Component({
   selector: 'app-main',
