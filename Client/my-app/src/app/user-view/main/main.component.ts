@@ -12,7 +12,9 @@ export class MainComponent implements OnInit {
   
   ngOnInit(): void {
     this.defaultService.Test().subscribe(
-       (res : String)=>{console.log(res);}
+       res=>{
+         console.log(res);
+        }
 
     )
   }
