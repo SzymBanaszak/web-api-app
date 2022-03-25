@@ -6,11 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DefaultService } from './services/default.service';
 import { UserViewModule } from './user-view/user-view.module';
+import { MainComponent } from './user-view/main/main.component';
 
 @NgModule({
   declarations: [
     AppComponent
-    
   ],
   imports: [
     BrowserModule,
