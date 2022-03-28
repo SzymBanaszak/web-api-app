@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../../Models/User';
 import { DefaultService } from '../../services/default.service';
 
 @Component({
@@ -8,6 +9,7 @@ import { DefaultService } from '../../services/default.service';
 })
 export class MainComponent implements OnInit {
   str: String;
+  users: Array<User>;
 
   constructor(private defaultService:DefaultService) {}
   
@@ -18,6 +20,15 @@ export class MainComponent implements OnInit {
         this.str = res;
         }
     )
+
+    this.defaultService.GetAllUsers().subscribe(
+      res=>{
+        this.users = res;
+        console.log(res);
+      }
+    )
+
+
   }
 
 }

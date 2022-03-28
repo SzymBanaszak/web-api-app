@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http'
 import {Injectable} from "@angular/core"
+import { Observable } from 'rxjs'
+import { User } from '../Models/User'
 
 
 
@@ -10,5 +12,10 @@ export class DefaultService {
 
     Test(){
         return this.http.get<String>('https://localhost:44398/Default')
+        //return this.http.get<>('https://localhost:44398/Users')
+    }
+
+    GetAllUsers():Observable<Array<User>>{
+        return this.http.get<Array<User>>('https://localhost:44398/Users')
     }
 }
