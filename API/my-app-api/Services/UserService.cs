@@ -32,7 +32,7 @@ namespace my_app_api.Services
                       
             return Users;
             // var x = await _db.User.Where(x => x.UserId == 1).FirstOrDefaultAsync();
-            var user = await _db.User.FirstOrDefaultAsync(x=>x.UserId==1);
+            //var user = await _db.User.FirstOrDefaultAsync(x=>x.UserId==1);
         }
 
         public async Task<User> GetUserDetails(int UserId) 

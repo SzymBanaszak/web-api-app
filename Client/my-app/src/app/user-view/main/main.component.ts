@@ -10,6 +10,8 @@ import { DefaultService } from '../../services/default.service';
 export class MainComponent implements OnInit {
   str: String;
   users: Array<User>;
+  usersDetails: Array<User>;
+  UserId: number;
 
   constructor(private defaultService:DefaultService) {}
   
@@ -28,7 +30,12 @@ export class MainComponent implements OnInit {
       }
     )
 
-
+    this.defaultService.GetUserDetails(this.UserId).subscribe(
+      res=>{
+        this.usersDetails = res;
+        console.log(res);
+      }
+    )
   }
 
 }

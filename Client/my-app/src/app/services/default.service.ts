@@ -5,6 +5,7 @@ import { User } from '../Models/User'
 
 
 
+
 @Injectable()
 export class DefaultService { 
     
@@ -17,5 +18,9 @@ export class DefaultService {
 
     GetAllUsers():Observable<Array<User>>{
         return this.http.get<Array<User>>('https://localhost:44398/Users')
+    }
+
+    GetUserDetails(UserId:number):Observable<Array<User>>{
+        return this.http.get<Array<User>>('https://localhost:44398/Users/' + UserId )
     }
 }
