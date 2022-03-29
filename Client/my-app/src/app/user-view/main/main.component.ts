@@ -11,7 +11,7 @@ export class MainComponent implements OnInit {
   str: String;
   users: Array<User>;
   usersDetails: Array<User>;
-  UserId: number;
+  UserId: number=1;
 
   constructor(private defaultService:DefaultService) {}
   
