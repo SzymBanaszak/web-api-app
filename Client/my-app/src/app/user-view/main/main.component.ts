@@ -30,7 +30,11 @@ export class MainComponent implements OnInit {
       }
     )
 
-    this.defaultService.GetUserDetails(this.UserId).subscribe(
+    
+  }
+
+  ShowUserDetails(UserId:number){
+    this.defaultService.GetUserDetails(UserId).subscribe(
       res=>{
         this.userDetails = res;
         console.log(res);
