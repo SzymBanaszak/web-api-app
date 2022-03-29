@@ -21,10 +21,11 @@ namespace my_app_api.Services
 
         public async Task<List<UserMainViewDTO>> GetAllUsers()
         {
-            
+
             var Users = await _db.User.Select(x =>
             new UserMainViewDTO()
             {
+                UserId = x.UserId,
                 FirstName = x.FirstName,
                 LastName = x.LastName
             }

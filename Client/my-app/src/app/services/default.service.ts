@@ -20,7 +20,7 @@ export class DefaultService {
         return this.http.get<Array<User>>('https://localhost:44398/Users')
     }
 
-    GetUserDetails(UserId:number):Observable<Array<User>>{
-        return this.http.get<Array<User>>('https://localhost:44398/Users/' + UserId )
+    GetUserDetails(UserId:number):Observable<User>{
+        return this.http.get<User>('https://localhost:44398/Users/' + UserId )
     }
 }

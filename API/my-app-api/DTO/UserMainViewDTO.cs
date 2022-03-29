@@ -7,6 +7,7 @@ namespace my_app_api.DTO
 {
     public class UserMainViewDTO
     {
+        public int UserId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
     }
