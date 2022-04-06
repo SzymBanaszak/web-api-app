@@ -66,7 +66,9 @@ body {
             </tbody>
 
         </table>
-    
+        <div *ngIf="display">
+          <app-user-details-view [userDetails]="userDetails"></app-user-details-view>
+      </div>
 
 </div>
 

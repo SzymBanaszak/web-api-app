@@ -12,6 +12,7 @@ export class MainComponent implements OnInit {
   users: Array<User>;
   userDetails: User;
   UserId: number;
+  display = false;
 
   constructor(private defaultService:DefaultService) {}
   
@@ -36,8 +37,10 @@ export class MainComponent implements OnInit {
   ShowUserDetails(UserId:number){
     this.defaultService.GetUserDetails(UserId).subscribe(
       res=>{
+        this.display = true;
         this.userDetails = res;
         console.log(res);
+        
       }
     )
   }

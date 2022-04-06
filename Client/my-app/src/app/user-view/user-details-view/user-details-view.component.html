@@ -1,70 +1,28 @@
-<style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-    
-    .topnav {
-      overflow: hidden;
-      background-color: #333;
-    }
-    
-    .topnav a {
-      float: left;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 17px;
-    }
-    
-    .topnav a:hover {
-      background-color: #ddd;
-      color: black;
-    }
-    
-    .topnav a.active {
-      background-color: #04AA6D;
-      color: white;
-    }
-    </style>
-    
-    <body>
-    
-    <div class="topnav">
-      <a class="active" href="/Main">Home</a>
-      <a href="#news"></a>
-     
-    </div>
-    
-    <div style="padding-left:16px">
-        <p>main works!</p>
-        <h1>{{str}}</h1>
-        
-    </div>
-    
-    
-    <div style="padding-left:16px">
-        
-            <table>
-                <thead>
-                    <th>ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th></th>
-                </thead>
-                <tbody>
-                   
-                    <tr *ngFor="let user of users">
-                        <td>{{user.UserId}}</td>
-                        <td>{{user.FirstName}}</td>
-                        <td>{{user.LastName}}</td>
-                        <td><button (click)="ShowUserDetails(user.UserId)">Details</button></td>
-                    </tr>
-                    
-                </tbody>
-    
-            </table>
-        
-    
-    </div>
+<h2>Details of {{userDetails.FirstName}} {{userDetails.LastName}}</h2>
+ 
+<table class='table'>
+  <thead>
+    <tr>
+      <th>PESEL Number</th>
+      <th>Date of Brith</th>
+      <th>Gender</th>
+      <th>Title</th>
+      <th>Location</th>
+      <th>Adress</th>
+      <th>Email</th>
+      <th>PhoneNumer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{userDetails.Pesel}}</td>
+      <td>{{userDetails.DateOfBrith}}</td>
+      <td>{{userDetails.Gender}}</td>
+      <td>{{userDetails.Title}}</td>
+      <td>{{userDetails.Location}}</td>
+      <td>{{userDetails.Adress}}</td>
+      <td>{{userDetails.Email}}</td>
+      <td>{{userDetails.PhoneNumer}}</td>
+    </tr>
+  </tbody>
+</table>

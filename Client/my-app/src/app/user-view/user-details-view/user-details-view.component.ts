@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { User } from '../../Models/User';
+import { DefaultService } from '../../services/default.service';
 
 @Component({
   selector: 'app-user-details-view',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-details-view.component.css']
 })
 export class UserDetailsViewComponent implements OnInit {
+ @Input() userDetails: User;
+ 
 
-  constructor() { }
+  constructor(private defaultService:DefaultService) {}
 
   ngOnInit(): void {
   }
-
+ 
 }
