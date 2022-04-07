@@ -10,12 +10,15 @@
       <th>Location</th>
       <th>Adress</th>
       <th>Email</th>
-      <th>PhoneNumer</th>
+      <th>Phone Number</th>
     </tr>
   </thead>
   <tbody>
+
+
+ 
+
     <tr>
-      <td>{{userDetails.Pesel}}</td>
       <td>{{userDetails.DateOfBrith}}</td>
       <td>{{userDetails.Gender}}</td>
       <td>{{userDetails.Title}}</td>
@@ -23,6 +26,15 @@
       <td>{{userDetails.Adress}}</td>
       <td>{{userDetails.Email}}</td>
       <td>{{userDetails.PhoneNumer}}</td>
+      
     </tr>
   </tbody>
 </table>
+<form [formGroup]="detailsForm"(ngSubmit)="Submit()">
+  <p>
+    <label for="FirstName">First Name </label>
+    <input type="text" id="FirstName" name="FirstName" formControlName="FirstName"> 
+    <button type="submit">ok</button>
+  </p>
+
+</form>

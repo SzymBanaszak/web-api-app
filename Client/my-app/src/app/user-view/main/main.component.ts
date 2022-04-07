@@ -13,9 +13,14 @@ export class MainComponent implements OnInit {
   userDetails: User;
   UserId: number;
   display = false;
-
-  constructor(private defaultService:DefaultService) {}
   
+
+  constructor(private defaultService:DefaultService) {
+  
+  
+}
+
+
   ngOnInit(): void {
     this.defaultService.Test().subscribe(
        res=>{
