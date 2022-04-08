@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { User } from '../../Models/User';
 import { FormBuilder,  FormGroup, FormControl, Validators } from '@angular/forms';
+import { DefaultService } from '../../services/default.service';
 
 @Component({
   selector: 'app-user-details-view',
@@ -13,7 +14,7 @@ export class UserDetailsViewComponent implements OnInit {
  
  detailsForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private defaultService:DefaultService) {}
 
   ngOnInit(): void {
     this.detailsForm = this.formBuilder.group({
@@ -65,6 +66,10 @@ export class UserDetailsViewComponent implements OnInit {
      ...this.detailsForm.value
    }
    console.log(user);
-
+   this.defaulUpdateUserDetails(user)
  }
+
+ 
 }
+
+

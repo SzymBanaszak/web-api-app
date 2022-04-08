@@ -13,6 +13,7 @@ export class MainComponent implements OnInit {
   userDetails: User;
   UserId: number;
   display = false;
+  updateUserDetails: User;
   
 
   constructor(private defaultService:DefaultService) {
@@ -49,6 +50,7 @@ export class MainComponent implements OnInit {
       }
     )
   }
+
 
 }
 

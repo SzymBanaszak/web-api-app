@@ -23,4 +23,12 @@ export class DefaultService {
     GetUserDetails(UserId:number):Observable<User>{
         return this.http.get<User>('https://localhost:44398/Users/' + UserId )
     }
+
+    // UpdateUserDetails(UserId:number):Observable<User>{
+    //     return this.http.put<User>('https://localhost:44398/Users/' + UserId )
+    // }
+
+    UpdateUserDetails(UserId: number, user:User): Observable<User> {
+        return this.http.put<User>('https://localhost:44398/Users/' + UserId , user);
+      }
 }
