@@ -27,9 +27,38 @@ export class UserDetailsViewComponent implements OnInit {
       Adress: ['', [Validators.required]],
       Email:['', [Validators.required]],
       PhoneNumer: ['', [Validators.required]]
-      
     });
+
+    this.detailsForm?.patchValue({
+      FirstName: this.userDetails.FirstName, 
+      LastName: this.userDetails.LastName,
+      Pesel: this.userDetails.Pesel,
+      DateOfBrith: this.userDetails.DateOfBrith,
+      Gender: this.userDetails.Gender,
+      Title: this.userDetails.Title,
+      Location: this.userDetails.Location,
+      Adress: this.userDetails.Adress,
+      Email: this.userDetails.Email,
+      PhoneNumer: this.userDetails.PhoneNumer
+    }); 
+
   }
+
+  ngOnChanges(){
+    this.detailsForm?.patchValue({
+      FirstName: this.userDetails.FirstName, 
+      LastName: this.userDetails.LastName,
+      Pesel: this.userDetails.Pesel,
+      DateOfBrith: this.userDetails.DateOfBrith,
+      Gender: this.userDetails.Gender,
+      Title: this.userDetails.Title,
+      Location: this.userDetails.Location,
+      Adress: this.userDetails.Adress,
+      Email: this.userDetails.Email,
+      PhoneNumer: this.userDetails.PhoneNumer
+    }); 
+  }
+
  Submit(){
    let user: User = {
      UserId: this.userDetails.UserId,
