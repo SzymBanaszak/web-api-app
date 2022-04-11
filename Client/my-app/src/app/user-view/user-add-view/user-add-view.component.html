@@ -1,36 +1,6 @@
-<h2>Details of {{userDetails.FirstName}} {{userDetails.LastName}}</h2>
- 
-<table class='table'>
-  <thead>
-    <tr>
-      <th>PESEL Number</th>
-      <th>Date of Brith</th>
-      <th>Gender</th>
-      <th>Title</th>
-      <th>Location</th>
-      <th>Adress</th>
-      <th>Email</th>
-      <th>Phone Number</th>
-    </tr>
-  </thead>
-  <tbody>
+<p>user-add-view works!</p>
 
-
- 
-
-    <tr>
-      <td>{{userDetails.DateOfBrith}}</td>
-      <td>{{userDetails.Gender}}</td>
-      <td>{{userDetails.Title}}</td>
-      <td>{{userDetails.Location}}</td>
-      <td>{{userDetails.Adress}}</td>
-      <td>{{userDetails.Email}}</td>
-      <td>{{userDetails.PhoneNumer}}</td>
-      
-    </tr>
-  </tbody>
-</table>
-<form [formGroup]="detailsForm"(ngSubmit)="Submit()">
+<form [formGroup]="addUserForm"(ngSubmit)="Submit()">
   <p>
     <label for="FirstName">First Name </label>
     <input type="text" id="FirstName" name="FirstName" formControlName="FirstName"> 

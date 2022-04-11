@@ -1,4 +1,6 @@
-﻿using my_app_api.DTO;
+﻿using AutoMapper;
+using my_app_api.DTO;
+using my_app_api.Mappers;
 using my_app_api.Models;
 using System;
 using System.Collections.Generic;
@@ -13,10 +15,12 @@ namespace my_app_api.Services
     {
         //obsluga userow
         private ApiDatabase _db;
+        private IMapper _mapper;
 
         public UserService() 
         {
             _db = new ApiDatabase();
+            _mapper = AutoMapperConfig.Initialize();
         }
 
         public async Task<List<UserMainViewDTO>> GetAllUsers()
@@ -41,5 +45,26 @@ namespace my_app_api.Services
             return  await _db.User.FirstOrDefaultAsync(x => x.UserId == UserId);
         }
 
+        public async Task<User> UpdateUserDetails(User user, int UserId)
+        {
+            
+            var userFromDb = await _db.User.FirstOrDefaultAsync(x => x.UserId == UserId);
+
+            userFromDb.FirstName = user.FirstName;
+            userFromDb.LastName = user.LastName;
+            userFromDb.Pesel = user.Pesel;
+            userFromDb.DateOfBrith = user.DateOfBrith;
+            userFromDb.Gender = user.Gender;
+            userFromDb.Title = user.Title;
+            userFromDb.Location = user.Location;
+            userFromDb.Email = user.Email;
+            userFromDb.PhoneNumer = user.PhoneNumer;
+
+        //userFromDb = User;
+        //userFromDb = _mapper.Map<User>(user);
+        await _db.SaveChangesAsync();
+            return userFromDb;
+           
+        }
     }
 }

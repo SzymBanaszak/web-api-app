@@ -7,7 +7,7 @@ import { User } from '../Models/User'
 
 
 @Injectable()
-export class DefaultService { 
+export class DefaultService {
     
     constructor(private http: HttpClient){}
 
@@ -24,11 +24,10 @@ export class DefaultService {
         return this.http.get<User>('https://localhost:44398/Users/' + UserId )
     }
 
-    // UpdateUserDetails(UserId:number):Observable<User>{
-    //     return this.http.put<User>('https://localhost:44398/Users/' + UserId )
-    // }
-
-    UpdateUserDetails(UserId: number, user:User): Observable<User> {
-        return this.http.put<User>('https://localhost:44398/Users/' + UserId , user);
+    UpdateUserDetails(user:User): Observable<User> {
+        return this.http.put<User>(`https://localhost:44398/Users/${user.UserId}`, user);
       }
+    addUser(user:User): Observable<User>{
+        return this.http.post<User>('https://localhost:44398/Users', user);
+    }
 }

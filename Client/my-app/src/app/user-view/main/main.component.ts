@@ -13,6 +13,7 @@ export class MainComponent implements OnInit {
   userDetails: User;
   UserId: number;
   display = false;
+  disp=false;
   updateUserDetails: User;
   
 
@@ -36,21 +37,26 @@ export class MainComponent implements OnInit {
         console.log(res);
       }
     )
+  }
 
-    
+  addPostUser()
+  {
+  this.display = false;
+   this.disp = true;
   }
 
   ShowUserDetails(UserId:number){
     this.defaultService.GetUserDetails(UserId).subscribe(
       res=>{
         this.display = true;
+        this.disp= false;
         this.userDetails = res;
         console.log(res);
         
       }
     )
   }
-
+ 
 
 }
 

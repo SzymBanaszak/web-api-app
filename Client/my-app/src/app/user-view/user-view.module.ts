@@ -5,6 +5,7 @@ import { DefaultService } from '../services/default.service';
 import { UserDetailsViewComponent } from './user-details-view/user-details-view.component';
 import { UserDetailsEditViewComponent } from './user-details-edit-view/user-details-edit-view.component';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserAddViewComponent } from './user-add-view/user-add-view.component';
 
 
 
@@ -13,7 +14,8 @@ import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     MainComponent,
     UserDetailsViewComponent,
-    UserDetailsEditViewComponent
+    UserDetailsEditViewComponent,
+    UserAddViewComponent
   ],
   imports: [
     CommonModule,

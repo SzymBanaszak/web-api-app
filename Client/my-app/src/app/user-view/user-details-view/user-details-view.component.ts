@@ -66,7 +66,7 @@ export class UserDetailsViewComponent implements OnInit {
      ...this.detailsForm.value
    }
    console.log(user);
-   this.defaulUpdateUserDetails(user)
+   this.defaultService.UpdateUserDetails(user).subscribe(data => console.log(data));
  }
 
  

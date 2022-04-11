@@ -1,4 +1,5 @@
-﻿using my_app_api.Services;
+﻿using my_app_api.Models;
+using my_app_api.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +42,21 @@ namespace my_app_api.Controllers
             try
             {
                 return Ok(await _userService.GetUserDetails(UserId));
+            }
+            catch (Exception ex)
+            {
+                return NotFound();
+            }
+
+        }
+
+        [Route("{UserId:int}")]
+        [HttpPut]
+        public async Task<IHttpActionResult> UpdateUserDetails([FromBody] User user, int UserId)
+        {
+            try
+            {
+                return Ok(await _userService.UpdateUserDetails(user,UserId));
             }
             catch (Exception ex)
             {
