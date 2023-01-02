@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Threading.Tasks;
 using System.Web;
 
@@ -66,5 +67,42 @@ namespace my_app_api.Services
             return userFromDb;
            
         }
+
+
+        public async Task<User> AddUser(User user)
+        {
+
+            var newUser = new User
+            {
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Pesel = user.Pesel,
+                DateOfBrith = user.DateOfBrith,
+                Gender = user.Gender,
+                Title = user.Title,
+                Adress = user.Adress,
+                Location = user.Location,
+                Email = user.Email,
+                PhoneNumer = user.PhoneNumer
+        };
+            //var newUser = await _db.User.Add(user);
+
+
+            _db.User.Add(newUser);
+            await _db.SaveChangesAsync();
+            return newUser;
+
+        }
     }
 }
+
+//public void SaveMessage(Message item)
+//{
+//    Messages.Add(new Message // Cannot await void
+//    {
+//        Title = item.Title,
+//        Description = item.Description,
+//        Date = item.Date,
+//        Url = item.Url
+//    });
+//}

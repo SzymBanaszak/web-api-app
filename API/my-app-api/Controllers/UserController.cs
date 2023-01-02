@@ -65,6 +65,20 @@ namespace my_app_api.Controllers
 
         }
 
+        [Route("")]
+        [HttpPost]
+        public async Task<IHttpActionResult> AddUser([FromBody] User user)
+        {
+            try
+            {
+                return Ok(await _userService.AddUser(user));
+            }
+            catch (Exception ex)
+            {
+                return NotFound();
+            }
+
+        }
 
     }
 }
