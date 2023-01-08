@@ -30,26 +30,26 @@ namespace my_app_api.Services
             var Users = await _db.User.Select(x =>
             new UserMainViewDTO()
             {
-                UserId = x.UserId,
+                Id = x.Id,
                 FirstName = x.FirstName,
                 LastName = x.LastName
             }
             ).ToListAsync();
                       
             return Users;
-            // var x = await _db.User.Where(x => x.UserId == 1).FirstOrDefaultAsync();
-            //var user = await _db.User.FirstOrDefaultAsync(x=>x.UserId==1);
+            // var x = await _db.User.Where(x => x.Id == 1).FirstOrDefaultAsync();
+            //var user = await _db.User.FirstOrDefaultAsync(x=>x.Id==1);
         }
 
-        public async Task<User> GetUserDetails(int UserId) 
+        public async Task<User> GetUserDetails(int Id) 
         {
-            return  await _db.User.FirstOrDefaultAsync(x => x.UserId == UserId);
+            return  await _db.User.FirstOrDefaultAsync(x => x.Id == Id);
         }
 
-        public async Task<User> UpdateUserDetails(User user, int UserId)
+        public async Task<User> UpdateUserDetails(User user, int Id)
         {
             
-            var userFromDb = await _db.User.FirstOrDefaultAsync(x => x.UserId == UserId);
+            var userFromDb = await _db.User.FirstOrDefaultAsync(x => x.Id == Id);
 
             userFromDb.FirstName = user.FirstName;
             userFromDb.LastName = user.LastName;
@@ -71,6 +71,8 @@ namespace my_app_api.Services
 
         public async Task<User> AddUser(User user)
         {
+            
+
 
             var newUser = new User
             {
@@ -83,9 +85,9 @@ namespace my_app_api.Services
                 Adress = user.Adress,
                 Location = user.Location,
                 Email = user.Email,
-                PhoneNumer = user.PhoneNumer
-        };
-            //var newUser = await _db.User.Add(user);
+                PhoneNumer = user.PhoneNumer,
+            };
+           
 
 
             _db.User.Add(newUser);

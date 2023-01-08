@@ -233,9 +233,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Mappers\AutoMapper.cs" />
-    <Compile Include="Migrations\202208090841585_InitialCreate.cs" />
-    <Compile Include="Migrations\202208090841585_InitialCreate.designer.cs">
-      <DependentUpon>202208090841585_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202301081721177_creation.cs" />
+    <Compile Include="Migrations\202301081721177_creation.designer.cs">
+      <DependentUpon>202301081721177_creation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApiDatabase.cs" />
@@ -327,8 +327,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202208090841585_InitialCreate.resx">
-      <DependentUpon>202208090841585_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202301081721177_creation.resx">
+      <DependentUpon>202301081721177_creation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
