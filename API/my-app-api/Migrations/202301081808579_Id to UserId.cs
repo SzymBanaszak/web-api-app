@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class creation : DbMigration
+    public partial class IdtoUserId : DbMigration
     {
         public override void Up()
         {
@@ -11,7 +11,7 @@
                 "dbo.User",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        UserId = c.Int(nullable: false, identity: true),
                         FirstName = c.String(nullable: false, maxLength: 50),
                         LastName = c.String(nullable: false, maxLength: 50),
                         Pesel = c.String(nullable: false, maxLength: 11),
@@ -23,7 +23,7 @@
                         Email = c.String(nullable: false, maxLength: 50),
                         PhoneNumer = c.String(nullable: false, maxLength: 50),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.UserId);
             
         }
         

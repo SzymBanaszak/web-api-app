@@ -30,7 +30,7 @@ namespace my_app_api.Services
             var Users = await _db.User.Select(x =>
             new UserMainViewDTO()
             {
-                Id = x.Id,
+                UserId = x.UserId,
                 FirstName = x.FirstName,
                 LastName = x.LastName
             }
@@ -41,15 +41,15 @@ namespace my_app_api.Services
             //var user = await _db.User.FirstOrDefaultAsync(x=>x.Id==1);
         }
 
-        public async Task<User> GetUserDetails(int Id) 
+        public async Task<User> GetUserDetails(int UserId) 
         {
-            return  await _db.User.FirstOrDefaultAsync(x => x.Id == Id);
+            return  await _db.User.FirstOrDefaultAsync(x => x.UserId == UserId);
         }
 
-        public async Task<User> UpdateUserDetails(User user, int Id)
+        public async Task<User> UpdateUserDetails(User user, int UserId)
         {
             
-            var userFromDb = await _db.User.FirstOrDefaultAsync(x => x.Id == Id);
+            var userFromDb = await _db.User.FirstOrDefaultAsync(x => x.UserId == UserId);
 
             userFromDb.FirstName = user.FirstName;
             userFromDb.LastName = user.LastName;
@@ -71,8 +71,6 @@ namespace my_app_api.Services
 
         public async Task<User> AddUser(User user)
         {
-            
-
 
             var newUser = new User
             {
@@ -86,10 +84,10 @@ namespace my_app_api.Services
                 Location = user.Location,
                 Email = user.Email,
                 PhoneNumer = user.PhoneNumer,
+                //IsActive = true,
+
             };
            
-
-
             _db.User.Add(newUser);
             await _db.SaveChangesAsync();
             return newUser;
@@ -98,13 +96,3 @@ namespace my_app_api.Services
     }
 }
 
-//public void SaveMessage(Message item)
-//{
-//    Messages.Add(new Message // Cannot await void
-//    {
-//        Title = item.Title,
-//        Description = item.Description,
-//        Date = item.Date,
-//        Url = item.Url
-//    });
-//}

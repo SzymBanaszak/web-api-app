@@ -56,6 +56,18 @@ export class MainComponent implements OnInit {
       }
     )
   }
+
+  // DisableUser(UserId:number){
+  //   this.defaultService.GetUserDetails(UserId).subscribe(
+  //     res=>{
+  //       this.display = true;
+  //       this.disp= false;
+  //       this.userDetails = res;
+  //       console.log(res);
+        
+  //     }
+  //   )
+ // }
  
 
 }

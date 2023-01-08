@@ -35,13 +35,13 @@ namespace my_app_api.Controllers
             }
 
         }
-        [Route("{Id:int}")]
+        [Route("{UserId:int}")]
         [HttpGet]
-        public async Task<IHttpActionResult> GetUserDetails(int Id)
+        public async Task<IHttpActionResult> GetUserDetails(int UserId)
         {
             try
             {
-                return Ok(await _userService.GetUserDetails(Id));
+                return Ok(await _userService.GetUserDetails(UserId));
             }
             catch (Exception ex)
             {
@@ -50,13 +50,13 @@ namespace my_app_api.Controllers
 
         }
 
-        [Route("{Id:int}")]
+        [Route("{UserId:int}")]
         [HttpPut]
-        public async Task<IHttpActionResult> UpdateUserDetails([FromBody] User user, int Id)
+        public async Task<IHttpActionResult> UpdateUserDetails([FromBody] User user, int UserId)
         {
             try
             {
-                return Ok(await _userService.UpdateUserDetails(user,Id));
+                return Ok(await _userService.UpdateUserDetails(user,UserId));
             }
             catch (Exception ex)
             {

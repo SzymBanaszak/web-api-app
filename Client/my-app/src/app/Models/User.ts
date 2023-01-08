@@ -10,5 +10,6 @@ public Title: String;
 public Location: String; 
 public Adress: String; 
 public Email: String;
-public PhoneNumer: String; 
+public PhoneNumer: String;
+public IsActive: boolean; 
 }

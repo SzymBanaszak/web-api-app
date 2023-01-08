@@ -233,9 +233,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Mappers\AutoMapper.cs" />
-    <Compile Include="Migrations\202301081721177_creation.cs" />
-    <Compile Include="Migrations\202301081721177_creation.designer.cs">
-      <DependentUpon>202301081721177_creation.cs</DependentUpon>
+    <Compile Include="Migrations\202301081808579_Id to UserId.cs" />
+    <Compile Include="Migrations\202301081808579_Id to UserId.designer.cs">
+      <DependentUpon>202301081808579_Id to UserId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301081839420_User IsActive.cs" />
+    <Compile Include="Migrations\202301081839420_User IsActive.designer.cs">
+      <DependentUpon>202301081839420_User IsActive.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApiDatabase.cs" />
@@ -327,8 +331,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202301081721177_creation.resx">
-      <DependentUpon>202301081721177_creation.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202301081808579_Id to UserId.resx">
+      <DependentUpon>202301081808579_Id to UserId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301081839420_User IsActive.resx">
+      <DependentUpon>202301081839420_User IsActive.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

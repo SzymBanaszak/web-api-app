@@ -30,4 +30,8 @@ export class DefaultService {
     addUser(user:User): Observable<User>{
         return this.http.post<User>('https://localhost:44398/Users', user);
     }
+
+    DisableUser(UserId:number):Observable<User>{
+        return this.http.delete<User>('https://localhost:44398/Users/' + UserId )
+    }
 }

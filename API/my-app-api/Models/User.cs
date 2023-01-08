@@ -2,6 +2,7 @@ namespace my_app_api.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -12,7 +13,7 @@ namespace my_app_api.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
-        public int Id { get; set; }
+        public int UserId { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -51,5 +52,8 @@ namespace my_app_api.Models
         [Required]
         [StringLength(50)]
         public string PhoneNumer { get; set; }
+
+        [Required]
+        public bool IsActive { get; set; } = true;
     }
 }
